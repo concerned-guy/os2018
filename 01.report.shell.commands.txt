@@ -1,0 +1,67 @@
+###################################################
+# COMMANDS
+
+echo hello world
+# passwd
+date
+hostname
+# arch
+uname -a
+dmesg | tail
+uptime
+# who am i
+whoami
+who
+id
+last -10
+# finger
+w
+
+###################################################
+# OUTPUT
+
+~/ $
+echo hello world
+hello world
+date
+Tue Jan  9 03:29:00 WIB 2018
+hostname
+arch
+uname -a
+Linux arch 4.14.12-1-ARCH #1 SMP PREEMPT Fri Jan 5 18:19:34 UTC 2018 x86_64 GNU/Linux
+dmesg | tail
+[29627.640364] Bluetooth: hci0: read Intel version: 370810011003110e00
+[29627.640385] Bluetooth: hci0: Intel Bluetooth firmware file: intel/ibt-hw-37.8.10-fw-1.10.3.11.e.bseq
+[29627.956496] Bluetooth: hci0: Intel Bluetooth firmware patch completed and activated
+[29630.693638] wlp2s0: authenticate with b4:ee:b4:7f:ec:d5
+[29630.700816] wlp2s0: send auth to b4:ee:b4:7f:ec:d5 (try 1/3)
+[29630.703989] wlp2s0: authenticated
+[29630.704664] wlp2s0: associate with b4:ee:b4:7f:ec:d5 (try 1/3)
+[29630.713829] wlp2s0: RX AssocResp from b4:ee:b4:7f:ec:d5 (capab=0x411 status=0 aid=1)
+[29630.716227] wlp2s0: associated
+[32455.631478] snd_hda_intel 0000:00:1f.3: Unstable LPIB (383224 >= 192000); disabling LPIB delay counting
+uptime
+ 03:29:00 up 1 day,  6:07,  1 user,  load average: 0.18, 0.45, 0.54
+whoami
+s
+who
+s        tty1         2018-01-07 21:22
+id
+uid=1000(s) gid=100(users) groups=100(users),7(lp),10(wheel),14(uucp),54(lock),95(storage),98(power)
+last -10
+s        tty1                          Sun Jan  7 21:22   still logged in
+reboot   system boot  4.14.12-1-ARCH   Sun Jan  7 21:21   still running
+s        tty1                          Sun Jan  7 21:00 - 21:21  (00:20)
+reboot   system boot  4.14.12-1-ARCH   Sun Jan  7 21:00 - 21:21  (00:21)
+s        tty1                          Sun Jan  7 19:52 - 21:00  (01:07)
+reboot   system boot  4.14.12-1-ARCH   Sun Jan  7 19:52 - 21:00  (01:07)
+s        tty1                          Fri Jan  5 20:21 - 12:56 (1+16:34)
+reboot   system boot  4.14.8-1-ARCH    Fri Jan  5 20:21 - 12:56 (1+16:34)
+s        tty1                          Fri Jan  5 13:49 - 17:33  (03:44)
+reboot   system boot  4.14.8-1-ARCH    Fri Jan  5 13:49 - 17:33  (03:44)
+
+wtmp begins Fri Dec  8 09:49:26 2017
+w
+ 03:29:00 up 1 day,  6:07,  1 user,  load average: 0.18, 0.45, 0.54
+USER     TTY        LOGIN@   IDLE   JCPU   PCPU WHAT
+s        tty1      Sun21   30:07m 24:51   0.00s xinit /home/s/.xinitrc -- /etc/X11/xinit/xserverrc :0 vt1 -auth /tmp/serverauth.nRMTTw0hHW
