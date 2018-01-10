@@ -1,0 +1,60 @@
+###########
+# commands:
+cd /bin
+ls | grep list
+cat /etc/passwd | wc -l
+free -h | grep Mem: | awk '{print $2}'
+grep processor /proc/cpuinfo | wc -l
+find ~/usr/img -iname '*.jpg' | wc -l
+###########
+
+bin/ $ cd /bin
+bin/ $ ls | grep list
+adhocfilelist
+checklistings
+dlist_test
+fc-list
+genl-ctrl-list
+iwlist
+klist
+libinput-list-devices
+libwacom-list-local-devices
+listgeo
+listings-ext.sh
+listplugins
+mean-list
+modis_download_from_list.py
+mtp-getplaylist
+mtp-newplaylist
+mtp-playlists
+nf-ct-list
+nf-exp-list
+nl-addr-list
+nl-class-list
+nl-cls-list
+nl-link-list
+nl-list-caches
+nl-list-sockets
+nl-neigh-list
+nl-neightbl-list
+nl-qdisc-list
+nl-route-list
+nl-rule-list
+nl-tctree-list
+otflist
+paclist
+paclog-pkglist
+sasldblistusers2
+tlp-pcilist
+tlp-usblist
+wordlist2hunspell
+word-list-compress
+bin/ $ cat /etc/passwd | wc -l
+32
+bin/ $ free -h | grep Mem: | awk '{print $2}'
+3.7G
+bin/ $ grep processor /proc/cpuinfo | wc -l
+4
+bin/ $ find ~/usr/img -iname '*.jpg' | wc -l
+48207
+bin/ $
