@@ -1,0 +1,252 @@
+###################################################
+# COMMANDS
+ps -ag
+
+nautilus &
+ps | grep nautilus
+
+pid=$(pgrep nautilus | head -1)
+echo $pid
+
+cat /proc/$pid/status
+
+kill -STOP $pid
+kill -CONT $pid
+kill -KILL $pid
+
+
+###################################################
+# RESULTS
+
+~/ $ ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 08:49 ?        00:00:01 /sbin/init
+root         2     0  0 08:49 ?        00:00:00 [kthreadd]
+root         4     2  0 08:49 ?        00:00:00 [kworker/0:0H]
+root         6     2  0 08:49 ?        00:00:00 [mm_percpu_wq]
+root         7     2  0 08:49 ?        00:00:00 [ksoftirqd/0]
+root         8     2  0 08:49 ?        00:00:00 [rcu_preempt]
+root         9     2  0 08:49 ?        00:00:00 [rcu_sched]
+root        10     2  0 08:49 ?        00:00:00 [rcu_bh]
+root        11     2  0 08:49 ?        00:00:00 [migration/0]
+root        12     2  0 08:49 ?        00:00:00 [watchdog/0]
+root        13     2  0 08:49 ?        00:00:00 [cpuhp/0]
+root        14     2  0 08:49 ?        00:00:00 [cpuhp/1]
+root        15     2  0 08:49 ?        00:00:00 [watchdog/1]
+root        16     2  0 08:49 ?        00:00:00 [migration/1]
+root        17     2  0 08:49 ?        00:00:00 [ksoftirqd/1]
+root        19     2  0 08:49 ?        00:00:00 [kworker/1:0H]
+root        20     2  0 08:49 ?        00:00:00 [cpuhp/2]
+root        21     2  0 08:49 ?        00:00:00 [watchdog/2]
+root        22     2  0 08:49 ?        00:00:00 [migration/2]
+root        23     2  0 08:49 ?        00:00:00 [ksoftirqd/2]
+root        25     2  0 08:49 ?        00:00:00 [kworker/2:0H]
+root        26     2  0 08:49 ?        00:00:00 [cpuhp/3]
+root        27     2  0 08:49 ?        00:00:00 [watchdog/3]
+root        28     2  0 08:49 ?        00:00:00 [migration/3]
+root        29     2  0 08:49 ?        00:00:00 [ksoftirqd/3]
+root        31     2  0 08:49 ?        00:00:00 [kworker/3:0H]
+root        32     2  0 08:49 ?        00:00:00 [kdevtmpfs]
+root        33     2  0 08:49 ?        00:00:00 [netns]
+root        36     2  0 08:49 ?        00:00:00 [kworker/2:1]
+root        37     2  0 08:49 ?        00:00:00 [khungtaskd]
+root        38     2  0 08:49 ?        00:00:00 [oom_reaper]
+root        39     2  0 08:49 ?        00:00:00 [writeback]
+root        40     2  0 08:49 ?        00:00:00 [kcompactd0]
+root        41     2  0 08:49 ?        00:00:00 [ksmd]
+root        42     2  0 08:49 ?        00:00:00 [khugepaged]
+root        43     2  0 08:49 ?        00:00:00 [crypto]
+root        44     2  0 08:49 ?        00:00:00 [kintegrityd]
+root        45     2  0 08:49 ?        00:00:00 [kblockd]
+root        46     2  0 08:49 ?        00:00:00 [edac-poller]
+root        47     2  0 08:49 ?        00:00:00 [devfreq_wq]
+root        48     2  0 08:49 ?        00:00:00 [watchdogd]
+root        49     2  0 08:49 ?        00:00:00 [kworker/u8:1]
+root        50     2  0 08:49 ?        00:00:00 [kswapd0]
+root        80     2  0 08:49 ?        00:00:00 [kworker/3:1]
+root        89     2  0 08:49 ?        00:00:00 [kthrotld]
+root        90     2  0 08:49 ?        00:00:00 [ipv6_addrconf]
+root        99     2  0 08:49 ?        00:00:00 [kstrp]
+root       133     2  0 08:49 ?        00:00:00 [ata_sff]
+root       136     2  0 08:49 ?        00:00:00 [scsi_eh_0]
+root       137     2  0 08:49 ?        00:00:00 [scsi_tmf_0]
+root       138     2  0 08:49 ?        00:00:00 [scsi_eh_1]
+root       139     2  0 08:49 ?        00:00:00 [scsi_tmf_1]
+root       140     2  0 08:49 ?        00:00:00 [kworker/u8:2]
+root       142     2  0 08:49 ?        00:00:00 [kworker/u8:3]
+root       146     2  0 08:49 ?        00:00:00 [kworker/2:1H]
+root       147     2  0 08:49 ?        00:00:00 [kworker/0:1H]
+root       148     2  0 08:49 ?        00:00:00 [kworker/3:1H]
+root       149     2  0 08:49 ?        00:00:00 [kworker/1:1H]
+root       151     2  0 08:49 ?        00:00:00 [kworker/1:2]
+root       166     2  0 08:49 ?        00:00:00 [jbd2/sda3-8]
+root       167     2  0 08:49 ?        00:00:00 [ext4-rsv-conver]
+root       194     1  0 08:49 ?        00:00:00 /usr/lib/systemd/systemd-journald
+root       203     1  0 08:49 ?        00:00:00 /usr/bin/lvmetad -f
+root       208     1  0 08:49 ?        00:00:01 /usr/lib/systemd/systemd-udevd
+root       229     2  0 08:49 ?        00:00:00 [cfg80211]
+root       230     2  0 08:49 ?        00:00:00 [irq/125-iwlwifi]
+root       231     2  0 08:49 ?        00:00:00 [kworker/u9:0]
+root       233     2  0 08:49 ?        00:00:00 [irq/126-mei_me]
+root       235     2  0 08:49 ?        00:00:00 [i915/signal:0]
+root       236     2  0 08:49 ?        00:00:00 [i915/signal:1]
+root       237     2  0 08:49 ?        00:00:00 [i915/signal:2]
+root       238     2  0 08:49 ?        00:00:00 [i915/signal:4]
+root       242     2  0 08:49 ?        00:00:02 [irq/128-SYNA239]
+root       272     2  0 08:49 ?        00:00:00 [kworker/u9:1]
+root       308     2  0 08:49 ?        00:00:00 [kworker/u8:6]
+root       350     2  0 08:49 ?        00:00:01 [kworker/0:3]
+root       351     2  0 08:49 ?        00:00:00 [kworker/2:3]
+root       486     2  0 08:49 ?        00:00:00 [ext4-rsv-conver]
+root       487     2  0 08:49 ?        00:00:00 [jbd2/sda5-8]
+root       488     2  0 08:49 ?        00:00:00 [ext4-rsv-conver]
+dbus       496     1  0 08:49 ?        00:00:00 /usr/bin/dbus-daemon --system --address
+root       498     1  0 08:49 ?        00:00:00 /bin/bash /usr/sbin/fancontrol
+root       500     1  0 08:49 ?        00:00:00 /usr/lib/systemd/systemd-logind
+root       501     1  0 08:49 ?        00:00:00 /usr/bin/ifplugd -i enp3s0 -r /etc/ifpl
+root       513     1  0 08:49 ?        00:00:00 /usr/bin/cron
+root       645     1  0 08:49 ?        00:00:00 wpa_supplicant -q -B -P /run/wpa_suppli
+root       647     1  0 08:49 ?        00:00:00 wpa_actiond -p /run/wpa_supplicant -i w
+root       650     1  0 08:49 ?        00:00:00 login -- s
+ntp        652     1  0 08:49 ?        00:00:00 /usr/bin/ntpd -g -u ntp:ntp
+s          775     1  0 08:49 ?        00:00:00 /usr/lib/systemd/systemd --user
+s          776   775  0 08:49 ?        00:00:00 (sd-pam)
+s          782   650  0 08:49 tty1     00:00:00 -bash
+s          798   782  0 08:49 tty1     00:00:00 /bin/sh /usr/bin/startx
+s          841   798  0 08:49 tty1     00:00:00 xinit /home/s/.xinitrc -- /etc/X11/xini
+s          842   841  1 08:49 tty1     00:00:11 /usr/lib/xorg-server/Xorg -nolisten tcp
+root       848   842  0 08:49 tty1     00:00:00 xf86-video-intel-backlight-helper intel
+s          851   841  0 08:49 tty1     00:00:00 dwm
+s          858   851  0 08:49 tty1     00:00:02 compton
+s          859   851  0 08:49 tty1     00:00:00 dunst
+s          861   851  0 08:49 tty1     00:00:00 ibus-daemon
+s          863   851  0 08:49 tty1     00:00:00 /usr/bin/python /usr/bin/udiskie
+s          864   851  0 08:49 tty1     00:00:00 unclutter
+s          865   851  0 08:49 tty1     00:00:00 xscreensaver -no-splash
+s          866   851  0 08:49 tty1     00:00:01 sh /home/s/.xinitrc
+s          904   775  0 08:49 ?        00:00:00 /usr/bin/dbus-daemon --session --addres
+s          952   775  0 08:49 ?        00:00:00 /usr/lib/gvfs/gvfsd
+root       967     1  0 08:49 ?        00:00:00 dhcpcd -4 -q -t 30 -K -L wlp2s0
+s          973   775  0 08:49 ?        00:00:00 /usr/lib/gvfs/gvfsd-fuse /run/user/1000
+s          985     1  0 08:49 ?        00:00:06 emacs --daemon
+s          992   861  0 08:49 tty1     00:00:00 /usr/lib/ibus/ibus-dconf
+s          998   861  0 08:49 tty1     00:00:01 /usr/lib/ibus/ibus-ui-gtk3
+s         1012   775  0 08:49 ?        00:00:00 /usr/lib/ibus/ibus-portal
+s         1029   775  0 08:49 ?        00:00:00 /usr/lib/at-spi-bus-launcher
+s         1040  1029  0 08:49 ?        00:00:00 /usr/bin/dbus-daemon --config-file=/usr
+s         1047   775  0 08:49 ?        00:00:00 /usr/lib/at-spi2-registryd --use-gnome-
+root      1061     1  0 08:49 ?        00:00:00 /usr/lib/udisks2/udisksd
+s         1080     1  0 08:50 ?        00:00:00 mpd
+polkitd   1081     1  0 08:50 ?        00:00:00 /usr/lib/polkit-1/polkitd --no-debug
+s         1109   861  0 08:50 tty1     00:00:00 /usr/lib/ibus/ibus-engine-simple
+s         1279     1  0 08:50 ?        00:00:00 /bin/bash
+s         1292   861  0 08:50 tty1     00:00:00 /usr/lib/ibus/ibus-engine-unikey --ibus
+s         1306  1279  6 08:50 ?        00:00:42 /usr/lib/chromium/chromium
+s         1318  1306  0 08:50 ?        00:00:00 /usr/lib/chromium/chrome-sandbox /usr/l
+s         1319  1318  0 08:50 ?        00:00:00 /usr/lib/chromium/chromium --type=zygot
+s         1321  1319  0 08:50 ?        00:00:00 /usr/lib/chromium/chromium --type=zygot
+s         1359   775  0 08:50 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no
+rtkit     1360     1  0 08:50 ?        00:00:00 /usr/lib/rtkit-daemon
+s         1362  1306  1 08:50 ?        00:00:07 /usr/lib/chromium/chromium --type=gpu-p
+s         1376  1362  0 08:50 ?        00:00:00 /usr/lib/chromium/chromium --type=gpu-b
+s         1548  1321  0 08:50 ?        00:00:02 /usr/lib/chromium/chromium --type=rende
+s         1703  1321  2 08:50 ?        00:00:14 /usr/lib/chromium/chromium --type=rende
+s         1712  1321  0 08:50 ?        00:00:00 /usr/lib/chromium/chromium --type=rende
+s         1838  1321  0 08:50 ?        00:00:05 /usr/lib/chromium/chromium --type=rende
+s         2710   775  0 08:53 ?        00:00:00 /usr/lib/gvfs/gvfs-udisks2-volume-monit
+s         2714   775  0 08:53 ?        00:00:00 /usr/lib/gvfs/gvfs-mtp-volume-monitor
+s         2719   775  0 08:53 ?        00:00:00 /usr/lib/gvfs/gvfsd-trash --spawner :1.
+s         2731   775  0 08:53 ?        00:00:00 /usr/lib/gvfs/gvfsd-network --spawner :
+s         2747   775  0 08:53 ?        00:00:00 /usr/lib/gvfs/gvfsd-dnssd --spawner :1.
+s         2769   775  0 08:53 ?        00:00:00 /usr/lib/dconf/dconf-service
+s         2806   851  0 08:53 ?        00:00:00 urxvt -e tmux
+s         2816  2806  0 08:53 pts/0    00:00:00 tmux
+s         2818     1  0 08:53 ?        00:00:00 tmux
+s         2819  2818  0 08:53 pts/1    00:00:00 -bash
+s         2851  2819  0 08:53 pts/1    00:00:00 mc
+s         2858  2851  0 08:53 pts/2    00:00:00 bash -rcfile .bashrc
+s         2920  2851  0 08:53 pts/1    00:00:00 /bin/sh /tmp/mc-s/mcextJRQKCZ
+s         2921  2920  0 08:53 pts/1    00:00:00 /bin/sh /usr/lib/mc/ext.d/doc.sh open p
+s         2922  2921  0 08:53 pts/1    00:00:00 /bin/sh /usr/bin/xdg-open /home/s/usr/t
+s         3010  2922  0 08:53 pts/1    00:00:02 /usr/bin/zathura /home/s/usr/tmp/3. pro
+s         3188  2818  0 08:53 pts/3    00:00:00 -bash
+s         3303  2818  0 08:54 pts/4    00:00:00 -bash
+s         3325  3303  0 08:54 pts/4    00:00:00 emacsclient -t
+root      3597     2  0 08:54 ?        00:00:00 [kworker/1:0]
+root      3669     2  0 08:54 ?        00:00:00 [kworker/3:2]
+root      3722     2  0 08:55 ?        00:00:00 [kworker/0:0]
+root      3921     1  0 08:55 ?        00:00:00 dirmngr --daemon --homedir /etc/pacman.
+root      3957     1  0 08:55 ?        00:00:00 gpg-agent --homedir /etc/pacman.d/gnupg
+s         4375     1  0 08:56 ?        00:00:00 nautilus
+root      5797     2  0 08:59 ?        00:00:00 [kworker/2:0]
+root      5952     2  0 08:59 ?        00:00:00 [kworker/1:1]
+root      6042     2  0 09:00 ?        00:00:00 [kworker/3:0]
+root      6164     2  0 09:00 ?        00:00:00 [kworker/0:1]
+s         6365     1  0 09:01 ?        00:00:00 /usr/bin/xclip -selection CLIPBOARD
+s         6369  2818  2 09:01 pts/6    00:00:00 -bash
+root      6399   498  0 09:01 ?        00:00:00 sleep 5
+s         6409   866  0 09:01 tty1     00:00:00 sleep 1
+s         6410  6369  0 09:01 pts/6    00:00:00 ps -ef
+~/ $ nautilus &
+[1] 6421
+~/ $ ps | grep nautilus
+ 6421 pts/6    00:00:00 nautilus
+~/ $ pid=$(pgrep nautilus | head -1)
+[1]+  Done                    nautilus
+~/ $ cat /proc/$pid/status
+Name:   nautilus
+Umask:  0022
+State:  S (sleeping)
+Tgid:   4375
+Ngid:   0
+Pid:    4375
+PPid:   1
+TracerPid:      0
+Uid:    1000    1000    1000    1000
+Gid:    100     100     100     100
+FDSize: 256
+Groups: 7 10 14 54 95 98 100
+NStgid: 4375
+NSpid:  4375
+NSpgid: 4375
+NSsid:  4313
+VmPeak:   689440 kB
+VmSize:   681352 kB
+VmLck:         0 kB
+VmPin:         0 kB
+VmHWM:     43500 kB
+VmRSS:     43496 kB
+RssAnon:           12120 kB
+RssFile:           31348 kB
+RssShmem:             28 kB
+VmData:    52268 kB
+VmStk:       132 kB
+VmExe:      1624 kB
+VmLib:     46236 kB
+VmPTE:       592 kB
+VmPMD:        16 kB
+VmSwap:        0 kB
+HugetlbPages:          0 kB
+Threads:        4
+SigQ:   0/15078
+SigPnd: 0000000000000000
+ShdPnd: 0000000000000000
+SigBlk: 0000000000000000
+SigIgn: 0000000000001080
+SigCgt: 0000000180000000
+CapInh: 0000000000000000
+CapPrm: 0000000000000000
+CapEff: 0000000000000000
+CapBnd: 0000003fffffffff
+CapAmb: 0000000000000000
+NoNewPrivs:     0
+Seccomp:        0
+Cpus_allowed:   f
+Cpus_allowed_list:      0-3
+Mems_allowed:   00000001
+Mems_allowed_list:      0
+voluntary_ctxt_switches:        1827
+nonvoluntary_ctxt_switches:     24
+~/ $ kill -STOP $pid
+~/ $ kill -CONT $pid
+~/ $ kill -KILL $pid
