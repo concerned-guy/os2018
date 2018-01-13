@@ -3,9 +3,10 @@
 ps -ag
 
 nautilus &
+sleep 5
 ps | grep nautilus
 
-pid=$(pgrep nautilus | head -1)
+pid=$(pgrep nautilus | tail -1)
 echo $pid
 
 cat /proc/$pid/status
