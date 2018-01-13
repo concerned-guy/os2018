@@ -9,6 +9,7 @@ int main()
     int pid;
 
     printf("parent");
+
     if ((pid = fork()) == 0)
         execvp(ps[0], ps);
 
