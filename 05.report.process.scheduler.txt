@@ -1,0 +1,10 @@
+# Find pid's of systemd, here it is 1
+s@arch: ~ $ cat /proc/sched_debug | awk '$2 == "systemd" { print $3  }'
+1
+1192
+
+# Show the number of context switch'es
+s@arch: ~ $ cat /proc/1/sched | grep switches
+nr_switches                                  :                 7026
+nr_voluntary_switches                        :                 6860
+nr_involuntary_switches                      :                  166
