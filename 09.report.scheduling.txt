@@ -1,0 +1,27 @@
+0   1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16  17  18  (ms)
+|[P1|===|===|===|===|===|===|===]   |   |   |   |   |   |   |   |   |   |   (Arrival & Burst Time)
+|  [|P2=|===|===|=] |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   [P3]|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |  [|P4=|===|===|===|=] |   |   |   |   |   |   |   |   |   |   |   |
+
+|[P1|   |   |   |   |   |   |   ][P2|   |   |   ][P3][P4|   |   |   |   ]   (First Come, First Served)
+
+|[P1|   |   |   |   |   |   |   ][P3][P2|   |   |   ][P4|   |   |   |   ]   (Shortest Job First)
+
+P1
+[][][P3][P2 |   |   | ][|P4 |   |   |   | ][|P1 |   |   |   |   |   |   ]   (Shortest Remaining Time First)
+  P2
+
+|[P1][P2][P3][P4][P1][P2][P4][P1][P2][P4][P1][P2][P4][P1][P4][P1|   |   ]   (Round Robin)
+
+* Average Waiting Time:
+  - FCFS: 7.58
+  - SJF: 6.83
+  - SRTF: 3.78
+  - RR: 6.83
+
+* Average Turnaround Time:
+  - FCFS: 12.08
+  - SJF: 11.33
+  - SRTF: 8.28
+  - RR: 11.33
